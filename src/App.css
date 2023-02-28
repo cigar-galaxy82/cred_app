@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+.studentBlock {
+  border: 2px red solid;
+  padding: 20px;
+  margin: 20px;
+}
+
+.opButton {
+  font-size: 1.5rem;
+  padding: 5px;
+  margin: 5px;
+}
+
+.opButton {
+  font-size: 1.5rem;
+  padding: 5px;
+  margin: 5px;
+}
+
+.addStudentForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  width: 50%;
+  padding: 10px;
+  font-size: 1rem;
+  margin: 10px;
+}
