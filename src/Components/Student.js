@@ -11,12 +11,6 @@ function Student({students}) {
 
   const [regno, setRegno] = useState('')
 
-
-  function deleteFunction(e){
-    axios.delete(url+`/students/${e}`).then((res) => {
-      console.log(res)
-    })
-  }
    
   const addFunction = () => {
     if(name !== '' && branch !== '' && regno !== '' )
@@ -25,8 +19,16 @@ function Student({students}) {
         branch:branch,
         regNo:regno
     }).then((res) => {
-        alert("added")
+        console.log("added")
     })
+  }
+
+  function deleteFun(e) {
+    axios.delete(url + `/students/${students[e.target.id]._id}`).then(res => {
+        console.log(res)
+        window.location.reload()
+    })
+    console.log("RUNNING")
   }
 
   return (
@@ -37,14 +39,13 @@ function Student({students}) {
         <input placeholder="Registration No." onChange={(e) => {setRegno(e.target.value)}}></input>
         <button className='opButton' onClick={addFunction}>Add</button>
       </form>
-      {students.map((student) => {
+      {students.map((student, i) => {
         return (
-          <div key={student._id} className="studentBlock">
+          <div key={i} className="studentBlock">
             <div>{student.branch}</div>
             <div>{student.regNo}</div>
             <div>{student.name}</div>
-            <button className='opButton' id="delButton" onClick={deleteFunction(student._id)}>delete</button>
-            <button className='opButton'>post</button>
+            <button className='opButton' id={i} onClick={(student) => deleteFun(student)}>delete</button>
           </div>
         )
       })}

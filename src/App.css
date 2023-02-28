@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .App-logo {
@@ -38,9 +42,10 @@
 }
 
 .studentBlock {
-  border: 2px red solid;
+  border: 2px rgb(105, 65, 65) solid;
   padding: 20px;
   margin: 20px;
+  width: 20%;
 }
 
 .opButton {
@@ -62,7 +67,7 @@
 }
 
 input {
-  width: 50%;
+  width: 100%;
   padding: 10px;
   font-size: 1rem;
   margin: 10px;
